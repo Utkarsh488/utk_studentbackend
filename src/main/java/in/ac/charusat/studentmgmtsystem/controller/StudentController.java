@@ -10,6 +10,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static java.awt.Color.blue;
+
 @RestController
 @CrossOrigin(origins="https://app-dummy123.herokuapp.com")
 public class StudentController {
@@ -26,6 +28,11 @@ public class StudentController {
 
     // Mappings - URL endpoints
     // Get the list of all student
+    @GetMapping
+    public String displayWelcomeMesssage(){
+        return
+                "<h1> welcome to ... </h1>";
+    }
     @GetMapping("/listStudents")
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
